@@ -31,39 +31,52 @@ int main (void) {
         printf("Sheep count: %d\n", sheep_pop_count);
         printf("Wolf count: %d\n", wolf_pop_count);
 
-        for(int s=0; s < sheep_pop_count; s++) {
+        if (sheep_pop_count) {
+            for(int s=0; s < sheep_pop_count; s++) {
 
-            // For each sheep, see if it will reproduce 
-            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < sheep_reproduce) {
-                sheep_pop_count += 1;
+                // For each sheep, see if it will reproduce 
+                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                if (random_float < sheep_reproduce) {
+                    sheep_pop_count += 1;
+                }
             }
         }
         
-        for (int w=0; w < wolf_pop_count; w++) {
+        if (wolf_pop_count) {
 
-            // For each wolf, see if it will eat a sheep
-            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < wolf_eat) {
-                sheep_pop_count -= 1;
+            for (int w=0; w < wolf_pop_count; w++) {
+
+                if (!wolf_pop_count) {
+                    break;
+                }
+
+                // For each wolf, see if it will eat a sheep
+                if (sheep_pop_count) {
+                    random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                    if (random_float < wolf_eat) {
+                        sheep_pop_count -= 1;
+                    }
+                }
+
+                // For each wolf, see if it will reproduce 
+                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                if (random_float < wolf_reproduce) {
+                    wolf_pop_count += 1;
+                }
+
+                if (wolf_pop_count) {
+                    random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                    if (random_float < wolf_death) {
+                        wolf_pop_count -= 1;
+                    }
+                }
+                // For each wolf, see if it will die 
+
+                printf("AFTER:\n");
+                printf("Sheep count: %d\n", sheep_pop_count);
+                printf("Wolf count: %d\n", wolf_pop_count);
             }
-
-            // For each wolf, see if it will reproduce 
-            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < wolf_reproduce) {
-                wolf_pop_count += 1;
-            }
-
-            // For each wolf, see if it will die 
-            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < wolf_death) {
-                wolf_pop_count -= 1;
-            }
-            printf("AFTER:\n");
-            printf("Sheep count: %d\n", sheep_pop_count);
-            printf("Wolf count: %d\n", wolf_pop_count);
-        }
-
+        }   
         // Wolf eat sheep 
 
         // Wolf die? 
