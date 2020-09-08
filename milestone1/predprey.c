@@ -53,7 +53,7 @@ int main (void) {
 
             // Determine whetether prey population will be reduced by the predator 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < e) {
+            if (random_float < b) {
                 prey_popD -= 1;
             }
             w++;
