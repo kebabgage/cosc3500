@@ -21,15 +21,16 @@ int main() {
 
 	// Go through the model 
 	while (t < max_time) {
+		c = -c
 		// Get the new values for t, x, y 
 		t = t + dt; 
 		// prey_pop = prey_pop + (prey_reproduce * prey_pop - prey_eaten * prey_pop * prey_pop)*dt
-		x = x + (a*x - b*x*y)*dt;
+		x = x + (a * x - b * x * y) *dt;
 
 		// pred_pop = pred_pop + (pred_death * pred_pop + amount_of_prey_born * prey_pop * pred_pop)
-		y = y + (-c*y + e*x*y)*dt;
+		y = y + (-1 * c * y + e * x * y) *dt;
 
-		printf("Time: %d x: %d y: %d\n", t, x, y);
+		printf("Time: %d x: %f y: %f\n", t, x, y);
 
 		t++;
 	}
