@@ -45,14 +45,14 @@ int main (void) {
                 prey_born += 1;
             }
 
-            //for (int w = 0; w < pred_pop; w++) {
+            for (int w = 0; w < pred_pop; w++) {
                 // Determine whether predator poulation will grow due to prey 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < e) {
                     //pred_popD += 1;
                     pred_born += 1;
                 }
-            //}
+            }
         }
 
         // For loop for predator death 
@@ -67,14 +67,14 @@ int main (void) {
                 pred_death += 1;
             }
 
-            //for (int s = 0; s < prey_pop; s++) {
+            for (int s = 0; s < prey_pop; s++) {
                 // Determine whetether prey population will be reduced by the predator 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < b) {
                     //prey_popD -= 1;
                     prey_death += 1;
                 }
-            //}
+            }
         }
 
         printf("\n -- %d %d \n", f, ff);
