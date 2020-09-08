@@ -59,8 +59,6 @@ int main (void) {
             w++;
         }
 
-        printf("Total: - pop * == %f\n", pred_pop * prey_pop);
-
         printf("Pred Pop -- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
 
 
