@@ -8,7 +8,7 @@
 #define T               100
 
 int main (void) {
-    double time_series[N][T] = {0};
+    //double time_series[N][T] = {0};
     float random_float;
     float prey_pop = 1.0;
     float pred_pop = 0.5;
