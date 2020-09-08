@@ -25,8 +25,7 @@ int main (void) {
         int pred_popD = 0;
         int prey_popD = 0;
 
-        printf("PreyPop %d\n", prey_pop);
-        printf("PredPop %d\n", pred_pop);
+       
 
 
         // For loop for prey reproduction 
@@ -38,30 +37,30 @@ int main (void) {
                 prey_popD += 1;
             }
 
-            for (int w = 0; w < pred_pop; w++) {
+            //for (int w = 0; w < pred_pop; w++) {
                 // Determine whether predator poulation will grow due to prey 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < e) {
                     pred_popD += 1;
                 }
-            }
+            //}
         }
 
         // For loop for predator death 
         for (int w = 0; w < pred_pop; w++) {
             // Determine whether a predator will die 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < c) {
+            if (random_float < c and ) {
                 pred_popD -= 1;
             }
 
-            for (int s = 0; s < prey_pop; s++) {
+            //for (int s = 0; s < prey_pop; s++) {
                 // Determine whetether prey population will be reduced by the predator 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < b) {
                     prey_popD -= 1;
                 }
-            }
+            //}
         }
 
         printf("Pred Pop \n-- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
