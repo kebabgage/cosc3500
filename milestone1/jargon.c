@@ -6,7 +6,7 @@ int main() {
 	float c = 0.3; // 
 	float e = 0.2;
 	float dt = 0.001;
-	int max_time = 100; 
+	int max_time = 10000; 
 
 	// Initial time and populations 
 	int t = 0;
@@ -21,7 +21,6 @@ int main() {
 
 	// Go through the model 
 	while (t < max_time) {
-		c = -c
 		// Get the new values for t, x, y 
 		t = t + dt; 
 		// prey_pop = prey_pop + (prey_reproduce * prey_pop - prey_eaten * prey_pop * prey_pop)*dt
