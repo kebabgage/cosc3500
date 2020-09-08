@@ -27,7 +27,7 @@ int main() {
 		x = x + (a*x - b*x*y)*dt;
 
 		// pred_pop = pred_pop + (pred_death * pred_pop + amount_of_prey_born * prey_pop * pred_pop)
-		y = y + (-c*y + e*x*y)*dt
+		y = y + (-c*y + e*x*y)*dt;
 
 		printf("%d %d %d", t, x, y);
 
