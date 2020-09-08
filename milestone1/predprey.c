@@ -76,7 +76,7 @@ int main (void) {
         printf("Prey born: %d      Predator born: %d\nPrey death: %d      Predator death: %d\n",
             prey_born, pred_born, prey_death, pred_death);
 
-        printf("Prey diff -- %d\n Predator diff -- %d", prey_born - prey_death, pred_born - prey_death);
+        printf("Prey diff -- %d\n Predator diff -- %d\n", prey_born - prey_death, pred_born - prey_death);
         //printf("Prey Pop \n-- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
         pred_pop = pred_pop + pred_popD;
