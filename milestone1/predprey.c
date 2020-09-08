@@ -6,57 +6,110 @@
 #define DATASET         "DS1"
 #define N               100
 #define T               100
-#define DECAY_CHANCE    0.03
 
 int main (void) {
     double time_series[N][T] = {0};
     float random_float;
-    int sheep_pop_count = 100;
-    int wolf_pop_count = 50;
+    float prey_pop = 1.0;
+    float pred_pop = 0.5;
 
-    //float decay_rate = 0.4;
-    float sheep_reproduce = 0.05;
-    float wolf_eat = 0.3;
-    float wolf_reproduce = 0.04; 
-    float wolf_death = 0.01;
-
-    FILE *fout = fopen("output.p", "a");
+    float a = 0.7; // Prey reproduce 
+    float b = 0.5; // Prey eaten 
+    float c = 0.3; // Predator death 
+    float e = 0.2; // Predator birth 
 
     // For each time step 
-
     for (int t=0; t < T; t++) {
-        fscanf(fout, "%d    %d      %d", &t, &sheep_pop_count, &wolf_pop_count);
-        printf("Time -- %d\n", t);
-        printf("BEFORE:\n");
-        printf("Sheep count: %d\n", sheep_pop_count);
-        printf("Wolf count: %d\n", wolf_pop_count);
+        printf("Time: %d, Prey: %d, Prey: %d", t, prey_pop, pred_pop);
 
-        if (sheep_pop_count) {
-            for(int s=0; s < sheep_pop_count; s++) {
+        // For loop for prey reproduction 
+        int s = 0;
+        while (s < prey_pop) {
+            // Determine whether a prey will reproduce 
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < a) {
+                prey_pop += 1;
+            }
+            s++;
+        }
 
-                // For each sheep, see if it will reproduce 
+        // For loop for predator death 
+        int w = 0;
+        while (w < pred_pop) {
+            // Determine whether a predator will die 
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < a) {
+                pred_pop -= 1;
+            }
+            w++;
+        }
+
+        int s = 0;
+        int w = 0;
+
+        while (s < prey_pop) {
+            while (w < pred_pop) {
+                // Determine whether a wolf will reproduce 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                if (random_float < sheep_reproduce) {
+                if (random_float < a) {
+                    prey_pop += 1;
+                }
+
+                // Determine whether a wolf will reproduce 
+                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                if (random_float < a) {
+                    prey_pop -= 1;
+                }
+                w++;
+            }
+            s++;
+        }
+
+
+
+
+        // Nested for loop for prey eaten and predator birth 
+
+        int s = 0;
+        while (s < pred_pop) {
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < a) {
+                sheep_pop_count += 1;
+            }
+        }
+    
+        // If there are still sheep 
+        if (sheep_pop_count) {
+            // For each prey 
+            for(int s=0; s < sheep_pop_count; s++) {
+                // Random chance that one prey reproduces
+                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                if (random_float < a) {
                     sheep_pop_count += 1;
                 }
             }
         }
         
+        // If there are still wolves 
         if (wolf_pop_count) {
-
+            // For each predator 
             for (int w=0; w < wolf_pop_count; w++) {
 
                 if (!wolf_pop_count) {
                     break;
                 }
 
-                // For each wolf, see if it will eat a sheep
-                if (sheep_pop_count) {
-                    random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                    if (random_float < wolf_eat) {
-                        sheep_pop_count -= 1;
+                // For each sheep 
+                for (int s=0; s < sheep_pop_count; s++) {
+                    if (sheep_pop_count) {
+                        random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+                            if (random_float < c) {
+                                sheep_pop_count -= 1;
+                            }
                     }
                 }
+                // For each wolf, see if it will eat a sheep
+                
 
                 // For each wolf, see if it will reproduce 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
@@ -70,40 +123,8 @@ int main (void) {
                         wolf_pop_count -= 1;
                     }
                 }
-                // For each wolf, see if it will die 
-
-                printf("AFTER:\n");
-                printf("Sheep count: %d\n", sheep_pop_count);
-                printf("Wolf count: %d\n", wolf_pop_count);
             }
         }   
-        // Wolf eat sheep 
-
-        // Wolf die? 
-
-        // Wolf reproduce 
     }
-
-/* 
-    for (int i=0; i<N; i++) {
-        printf("N: %d\n", i);
-        for (int t=0; t<T; t++) {
-            printf("N: %d\n", i);
-
-            if (t==0) {
-                time_series[i][t] = 1; // initial radiation
-            } else {
-                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                if (random_float<DECAY_CHANCE) { // less than DECAY_CHANCE, particle decay
-                    time_series[i][t] = decay_rate*time_series[i][t-1];
-                } else { // no decay
-                    time_series[i][t] = time_series[i][t-1];
-                }
-            }
-        }
-    }
-*/
-    fclose(fout);
-//    mat2hdf5(time_series);
     return 0;
 }
