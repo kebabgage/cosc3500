@@ -5,7 +5,7 @@
 //#define FILE            "particles.h5"
 #define DATASET         "DS1"
 #define N               100
-#define T               10000
+#define T               100
 
 int main (void) {
     //double time_series[N][T] = {0};
