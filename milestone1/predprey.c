@@ -10,8 +10,8 @@
 int main (void) {
     //double time_series[N][T] = {0};
     float random_float;
-    float prey_pop = 1.0;
-    float pred_pop = 0.5;
+    float prey_pop = 100;
+    float pred_pop = 50;
 
     float a = 0.7; // Prey reproduce 
     float b = 0.5; // Prey eaten 
