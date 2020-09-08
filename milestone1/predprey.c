@@ -33,6 +33,11 @@ int main (void) {
             if (random_float < a) {
                 prey_popD += 1;
             }
+
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < e) {
+                pred_popD += 1;
+            }
             s++;
         }
 
@@ -44,6 +49,11 @@ int main (void) {
             if (random_float < c) {
                 pred_popD -= 1;
             }
+
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < e) {
+                pred_popD += 1;
+            }
             w++;
         }
 
@@ -53,13 +63,13 @@ int main (void) {
 
         // // while (s < prey_pop * pred_pop) {
 
-        //     // Determine whether a wolf will reproduce 
+        // //     // Determine whether a wolf will reproduce 
         //     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
         //     if (random_float < e) {
         //         pred_popD += 1;
         //     }
 
-        //     // Determine whether a wolf will eat 
+        // //     // Determine whether a wolf will eat 
         //     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
         //     if (random_float < b) {
         //         prey_popD -= 1;
