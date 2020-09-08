@@ -70,12 +70,12 @@ int main (void) {
             s++;
         }
 
-        printf("Total: %d -- pop * == %f", total, pred_pop * prey_pop);
+        printf("Total: %d -- pop * == %f\n", total, pred_pop * prey_pop);
 
-        printf("Pred Pop -- BEFORE %f D %d AFTER %f", pred_pop, pred_popD, pred_pop - pred_popD);
+        printf("Pred Pop -- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
 
 
-        printf("Prey Pop -- BEFORE %f D %d AFTER %f", prey_pop, prey_popD, prey_pop - prey_popD);
+        printf("Prey Pop -- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
 
 
