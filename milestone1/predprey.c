@@ -20,7 +20,7 @@ int main (void) {
 
     // For each time step 
     for (int t=0; t < T; t++) {
-        printf("Time: %d, Prey: %d, Prey: %d", t, prey_pop, pred_pop);
+        printf("Time: %d, Prey: %f, Prey: %f", t, prey_pop, pred_pop);
 
         // For loop for prey reproduction 
         int s = 0;
@@ -44,8 +44,8 @@ int main (void) {
             w++;
         }
 
-        int s = 0;
-        int w = 0;
+        s = 0;
+        w = 0;
 
         while (s < prey_pop) {
             while (w < pred_pop) {
