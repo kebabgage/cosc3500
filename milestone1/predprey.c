@@ -46,11 +46,10 @@ int main (void) {
 
         s = 0;
         w = 0;
+        int total = 0;
 
         while (s < prey_pop) {
-            printf("Prey pop: %f", prey_pop);
             while (w < pred_pop) {
-                printf("Pred pop: %f", pred_pop);
 
                 // Determine whether a wolf will reproduce 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
@@ -64,9 +63,12 @@ int main (void) {
                     prey_pop -= 1;
                 }
                 w++;
+                total++;
             }
             s++;
         }
+
+        printf("Total: %d -- pop * == %d", total, pred_pop * prey_pop);
 
 
 
