@@ -79,9 +79,11 @@ int main (void) {
         printf("Prey diff -- %d\n Predator diff -- %d\n", prey_born - prey_death, pred_born - pred_death);
         //printf("Prey Pop \n-- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
-        pred_pop = pred_pop + pred_popD;
-        prey_pop = prey_pop + prey_popD;
+        //pred_pop = pred_pop + pred_popD;
+        // prey_pop = prey_pop + prey_popD;
 
+        prey_pop = prey_born - prey_death;
+        pred_pop = pred_born - pred_death
     }
     return 0;
 }
