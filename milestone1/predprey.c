@@ -69,8 +69,8 @@ int main (void) {
 
         printf("Prey Pop \n-- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
-        pred_pop = pred_pop - pred_popD;
-        prey_pop = prey_pop - prey_popD;
+        pred_pop = pred_pop + pred_popD;
+        prey_pop = prey_pop + prey_popD;
 
     }
     return 0;
