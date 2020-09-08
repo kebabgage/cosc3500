@@ -72,10 +72,10 @@ int main (void) {
 
         printf("Total: %d -- pop * == %f", total, pred_pop * prey_pop);
 
-        print("Pred Pop -- BEFORE %d D %d AFTER %d", pred_pop, pred_popD, pred_pop - pred_popD);
+        printf("Pred Pop -- BEFORE %d D %d AFTER %d", pred_pop, pred_popD, pred_pop - pred_popD);
 
 
-        print("Prey Pop -- BEFORE %d D %d AFTER %d", prey_pop, prey_popD, prey_pop - prey_popD);
+        printf("Prey Pop -- BEFORE %d D %d AFTER %d", prey_pop, prey_popD, prey_pop - prey_popD);
 
 
 
