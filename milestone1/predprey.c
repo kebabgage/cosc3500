@@ -48,8 +48,7 @@ int main (void) {
         w = 0;
         int total = 0;
 
-        while (s < prey_pop) {
-            while (w < pred_pop) {
+        while (s < prey_pop * pred_pop) {
 
                 // Determine whether a wolf will reproduce 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
@@ -57,14 +56,13 @@ int main (void) {
                     pred_pop += 1;
                 }
 
-                // Determine whether a wolf will reproduce 
+                // Determine whether a wolf will eat 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < b) {
                     prey_pop -= 1;
                 }
-                w++;
                 total++;
-            }
+
             s++;
         }
 
