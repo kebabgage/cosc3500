@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int main() {
 	// Model Parameters 
 
@@ -5,7 +7,7 @@ int main() {
 	float b = 0.5; // Prey eaten 
 	float c = 0.3; // 
 	float e = 0.2;
-	float dt = 0.001;
+	float dt = 0.01;
 	int max_time = 10000; 
 
 	// Initial time and populations 
@@ -23,13 +25,14 @@ int main() {
 	while (t < max_time) {
 		// Get the new values for t, x, y 
 		t = t + dt; 
+
 		// prey_pop = prey_pop + (prey_reproduce * prey_pop - prey_eaten * prey_pop * prey_pop)*dt
 		x = x + (a * x - b * x * y) *dt;
 
 		// pred_pop = pred_pop + (pred_death * pred_pop + amount_of_prey_born * prey_pop * pred_pop)
 		y = y + (-1 * c * y + e * x * y) *dt;
 
-		printf("Time: %d x: %f y: %f\n", t, x, y);
+		printf("%d, %f, %f\n", t, x, y);
 
 		t++;
 	}
