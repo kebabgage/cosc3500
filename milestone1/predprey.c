@@ -39,10 +39,10 @@ int main (void) {
             }
 
             for (int w = 0; w < pred_pop; w++) {
-                // Determine whether predator poulation will grow due to prey 
+                // Determine whetether prey population will be reduced by the predator 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                if (random_float < e) {
-                    pred_popD += 1;
+                if (random_float < b) {
+                    prey_popD -= 1;
                 }
             }
         }
@@ -56,10 +56,10 @@ int main (void) {
             }
 
             for (int s = 0; s < prey_pop; s++) {
-                // Determine whetether prey population will be reduced by the predator 
+                // Determine whether predator poulation will grow due to prey 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                if (random_float < b) {
-                    prey_popD -= 1;
+                if (random_float < e) {
+                    pred_popD += 1;
                 }
             }
         }
