@@ -59,29 +59,6 @@ int main (void) {
             w++;
         }
 
-        // s = 0;
-        // w = 0;
-        // int total = 0;
-
-        // // while (s < prey_pop * pred_pop) {
-
-        // //     // Determine whether a wolf will reproduce 
-        //     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-        //     if (random_float < e) {
-        //         pred_popD += 1;
-        //     }
-
-        // //     // Determine whether a wolf will eat 
-        //     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-        //     if (random_float < b) {
-        //         prey_popD -= 1;
-        //     }
-
-        //     total++;
-
-        //     s++;
-        // }
-
         printf("Total: - pop * == %f\n", pred_pop * prey_pop);
 
         printf("Pred Pop -- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
@@ -89,68 +66,9 @@ int main (void) {
 
         printf("Prey Pop -- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
+        pred_pop = pred_pop - pred_popD;
+        prey_pop = prey_pop - prey_popD;
 
-
-
-
-    //     // Nested for loop for prey eaten and predator birth 
-
-    //     int s = 0;
-    //     while (s < pred_pop) {
-    //         random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-    //         if (random_float < a) {
-    //             sheep_pop_count += 1;
-    //         }
-    //     }
-    
-    //     // If there are still sheep 
-    //     if (sheep_pop_count) {
-    //         // For each prey 
-    //         for(int s=0; s < sheep_pop_count; s++) {
-    //             // Random chance that one prey reproduces
-    //             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-    //             if (random_float < a) {
-    //                 sheep_pop_count += 1;
-    //             }
-    //         }
-    //     }
-        
-    //     // If there are still wolves 
-    //     if (wolf_pop_count) {
-    //         // For each predator 
-    //         for (int w=0; w < wolf_pop_count; w++) {
-
-    //             if (!wolf_pop_count) {
-    //                 break;
-    //             }
-
-    //             // For each sheep 
-    //             for (int s=0; s < sheep_pop_count; s++) {
-    //                 if (sheep_pop_count) {
-    //                     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-    //                         if (random_float < c) {
-    //                             sheep_pop_count -= 1;
-    //                         }
-    //                 }
-    //             }
-    //             // For each wolf, see if it will eat a sheep
-                
-
-    //             // For each wolf, see if it will reproduce 
-    //             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-    //             if (random_float < wolf_reproduce) {
-    //                 wolf_pop_count += 1;
-    //             }
-
-    //             if (wolf_pop_count) {
-    //                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-    //                 if (random_float < wolf_death) {
-    //                     wolf_pop_count -= 1;
-    //                 }
-    //             }
-    //         }
-    //     }   
-    // }
     }
     return 0;
 }
