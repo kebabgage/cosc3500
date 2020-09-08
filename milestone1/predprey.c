@@ -26,7 +26,7 @@ int main (void) {
         int prey_popD = 0;
 
         printf("PreyPop %d\n", prey_pop);
-        printf("PredPop %d\b", pred_pop);
+        printf("PredPop %d\n", pred_pop);
 
 
         // For loop for prey reproduction 
@@ -61,10 +61,10 @@ int main (void) {
 
         }
 
-        printf("Pred Pop -- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
+        printf("Pred Pop \n-- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
 
 
-        printf("Prey Pop -- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
+        printf("Prey Pop \n-- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
         pred_pop = pred_pop - pred_popD;
         prey_pop = prey_pop - prey_popD;
