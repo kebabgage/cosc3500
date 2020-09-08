@@ -30,10 +30,13 @@ int main (void) {
         int prey_death = 0;
         int pred_death = 0;
        
-
+        int f = 0;
+        int ff = 0;
 
         // For loop for prey reproduction 
         for (int s = 0; s < prey_pop; s++) {
+
+            f++;
 
             // Determine whether a prey will reproduce 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
@@ -54,6 +57,9 @@ int main (void) {
 
         // For loop for predator death 
         for (int w = 0; w < pred_pop; w++) {
+
+            ff++;
+
             // Determine whether a predator will die 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
             if (random_float < c) {
@@ -70,6 +76,8 @@ int main (void) {
                 }
             //}
         }
+
+        printf("\n -- %d %d \n", f, ff);
 
         //printf("Pred Pop \n-- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
 
