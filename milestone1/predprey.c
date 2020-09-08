@@ -25,10 +25,13 @@ int main (void) {
         int pred_popD = 0;
         int prey_popD = 0;
 
-        // For loop for prey reproduction 
-        for (int s =0; s < prey_pop; s++) {
+        printf("PreyPop %d\n", prey_pop);
+        printf("PredPop %d\b", pred_pop);
 
-            printf("PreyPop %d\n", prey_pop);
+
+        // For loop for prey reproduction 
+        for (int s = 0; s < prey_pop; s++) {
+
             // Determine whether a prey will reproduce 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
             if (random_float < a) {
