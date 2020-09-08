@@ -31,4 +31,6 @@ int main() {
 
 		printf("%d %d %d", t, x, y);
 
+		t++;
+
 }
