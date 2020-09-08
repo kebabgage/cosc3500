@@ -14,15 +14,18 @@ int main (void) {
     int sheep_pop_count = 100;
     int wolf_pop_count = 50;
 
-    float decay_rate = 0.4;
-    float sheep_reproduce = 0.5;
-    float wolf_eat = 0.5;
-    float wolf_reproduce = 0.5; 
-    float wolf_death = 0.5;
+    //float decay_rate = 0.4;
+    float sheep_reproduce = 0.05;
+    float wolf_eat = 0.3;
+    float wolf_reproduce = 0.04; 
+    float wolf_death = 0.01;
+
+    FILE *fout = fopen("output.p", "a");
 
     // For each time step 
 
     for (int t=0; t < T; t++) {
+        fscanf(fout, "%d    %d      %d", &t, &sheep_pop_count, &wolf_pop_count);
         printf("Time -- %d\n", t);
         printf("BEFORE:\n");
         printf("Sheep count: %d\n", sheep_pop_count);
@@ -87,6 +90,7 @@ int main (void) {
         }
     }
 */
+    fclose(fout);
 //    mat2hdf5(time_series);
     return 0;
 }
