@@ -50,7 +50,7 @@ int main (void) {
         for (int w = 0; w < pred_pop; w++) {
             // Determine whether a predator will die 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < c and ) {
+            if (random_float < c) {
                 pred_popD -= 1;
             }
 
