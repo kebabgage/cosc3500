@@ -82,8 +82,8 @@ int main (void) {
         //pred_pop = pred_pop + pred_popD;
         // prey_pop = prey_pop + prey_popD;
 
-        prey_pop = prey_born - prey_death;
-        pred_pop = pred_born - pred_death;
+        prey_pop += prey_born - prey_death;
+        pred_pop += pred_born - pred_death;
     }
     return 0;
 }
