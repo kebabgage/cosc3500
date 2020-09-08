@@ -5,7 +5,7 @@
 //#define FILE            "particles.h5"
 #define DATASET         "DS1"
 #define N               100
-#define T               100
+#define T               10000
 
 int main (void) {
     //double time_series[N][T] = {0};
@@ -45,14 +45,14 @@ int main (void) {
                 prey_born += 1;
             }
 
-            for (int w = 0; w < pred_pop; w++) {
+            //for (int w = 0; w < pred_pop; w++) {
                 // Determine whether predator poulation will grow due to prey 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < e) {
                     //pred_popD += 1;
                     pred_born += 1;
                 }
-            }
+            //}
         }
 
         // For loop for predator death 
@@ -67,25 +67,25 @@ int main (void) {
                 pred_death += 1;
             }
 
-            for (int s = 0; s < prey_pop; s++) {
+            //for (int s = 0; s < prey_pop; s++) {
                 // Determine whetether prey population will be reduced by the predator 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < b) {
                     //prey_popD -= 1;
                     prey_death += 1;
                 }
-            }
+            //}
         }
 
-        printf("\n -- %d %d \n", f, ff);
+        // printf("\n -- %d %d \n", f, ff);
 
-        //printf("Pred Pop \n-- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
+        // //printf("Pred Pop \n-- BEFORE %f D %d AFTER %f\n", pred_pop, pred_popD, pred_pop - pred_popD);
 
-        printf("Prey born: %d      Predator born: %d\nPrey death: %d      Predator death: %d\n",
-            prey_born, pred_born, prey_death, pred_death);
+        // printf("Prey born: %d      Predator born: %d\nPrey death: %d      Predator death: %d\n",
+        //     prey_born, pred_born, prey_death, pred_death);
 
-        printf("Prey diff -- %d\n Predator diff -- %d\n", prey_born - prey_death, pred_born - pred_death);
-        //printf("Prey Pop \n-- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
+        // printf("Prey diff -- %d\n Predator diff -- %d\n", prey_born - prey_death, pred_born - pred_death);
+        // //printf("Prey Pop \n-- BEFORE %f D %d AFTER %f\n", prey_pop, prey_popD, prey_pop - prey_popD);
 
         //pred_pop = pred_pop + pred_popD;
         // prey_pop = prey_pop + prey_popD;
