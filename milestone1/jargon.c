@@ -1,17 +1,17 @@
 int main() {
 	// Model Parameters 
 
-	int a = 0.7; // Prey reproduce 
-	int b = 0.5; // Prey eaten 
-	int c = 0.3; // 
-	int e = 0.2;
-	int dt = 0.001;
+	float a = 0.7; // Prey reproduce 
+	float b = 0.5; // Prey eaten 
+	float c = 0.3; // 
+	float e = 0.2;
+	float dt = 0.001;
 	int max_time = 100; 
 
 	// Initial time and populations 
 	int t = 0;
-	int x = 1.0;
-	int y = 0.5;
+	float x = 1.0;
+	float y = 0.5;
 
 	// Some empty lists 
 	int t_array[max_time]; // = malloc();
