@@ -47,28 +47,28 @@ int main (void) {
             w++;
         }
 
-        s = 0;
-        w = 0;
-        int total = 0;
+        // s = 0;
+        // w = 0;
+        // int total = 0;
 
-        while (s < prey_pop * pred_pop) {
+        // // while (s < prey_pop * pred_pop) {
 
-            // Determine whether a wolf will reproduce 
-            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < e) {
-                pred_popD += 1;
-            }
+        //     // Determine whether a wolf will reproduce 
+        //     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+        //     if (random_float < e) {
+        //         pred_popD += 1;
+        //     }
 
-            // Determine whether a wolf will eat 
-            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-            if (random_float < b) {
-                prey_popD -= 1;
-            }
+        //     // Determine whether a wolf will eat 
+        //     random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+        //     if (random_float < b) {
+        //         prey_popD -= 1;
+        //     }
 
-            total++;
+        //     total++;
 
-            s++;
-        }
+        //     s++;
+        // }
 
         printf("Total: %d -- pop * == %f\n", total, pred_pop * prey_pop);
 
