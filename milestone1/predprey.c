@@ -68,7 +68,7 @@ int main (void) {
             s++;
         }
 
-        printf("Total: %d -- pop * == %d", total, pred_pop * prey_pop);
+        printf("Total: %d -- pop * == %f", total, pred_pop * prey_pop);
 
 
 
