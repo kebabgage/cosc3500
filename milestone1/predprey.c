@@ -52,7 +52,7 @@ int main (void) {
                 // Determine whether a wolf will reproduce 
                 random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
                 if (random_float < e) {
-                    prey_pop += 1;
+                    pred_pop += 1;
                 }
 
                 // Determine whether a wolf will reproduce 
