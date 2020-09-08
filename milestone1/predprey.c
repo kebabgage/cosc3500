@@ -22,13 +22,16 @@ int main (void) {
     for (int t=0; t < T; t++) {
         printf("Time: %d, Prey: %f, Pred: %f\n", t, prey_pop, pred_pop);
 
+        int pred_popD = 0;
+        int prey_popD = 0;
+
         // For loop for prey reproduction 
         int s = 0;
         while (s < prey_pop) {
             // Determine whether a prey will reproduce 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
             if (random_float < a) {
-                prey_pop += 1;
+                prey_popD += 1;
             }
             s++;
         }
@@ -39,7 +42,7 @@ int main (void) {
             // Determine whether a predator will die 
             random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
             if (random_float < c) {
-                pred_pop -= 1;
+                pred_popD -= 1;
             }
             w++;
         }
@@ -50,23 +53,30 @@ int main (void) {
 
         while (s < prey_pop * pred_pop) {
 
-                // Determine whether a wolf will reproduce 
-                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                if (random_float < e) {
-                    pred_pop += 1;
-                }
+            // Determine whether a wolf will reproduce 
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < e) {
+                pred_popD += 1;
+            }
 
-                // Determine whether a wolf will eat 
-                random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
-                if (random_float < b) {
-                    prey_pop -= 1;
-                }
-                total++;
+            // Determine whether a wolf will eat 
+            random_float = (float)rand()/(float)(RAND_MAX); //random float from 0 to 1
+            if (random_float < b) {
+                prey_popD -= 1;
+            }
+
+            total++;
 
             s++;
         }
 
         printf("Total: %d -- pop * == %f", total, pred_pop * prey_pop);
+
+        print("Pred Pop -- BEFORE %d D %d AFTER %d", pred_pop, pred_popD, pred_pop - pred_popD);
+
+
+        print("Prey Pop -- BEFORE %d D %d AFTER %d", prey_pop, prey_popD, prey_pop - prey_popD);
+
 
 
 
