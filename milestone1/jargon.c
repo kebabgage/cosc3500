@@ -14,9 +14,9 @@ int main() {
 	int y = 0.5;
 
 	// Some empty lists 
-	int t_array[]; // = malloc();
-	int x_array[]; // = malloc();
-	int y_array[]; // = malloc();
+	int t_array[max_time]; // = malloc();
+	int x_array[max_time]; // = malloc();
+	int y_array[max_time]; // = malloc();
 
 
 	// Go through the model 
